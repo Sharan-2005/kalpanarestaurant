@@ -10,8 +10,7 @@ import AuthPage from "@/pages/auth-page";
 import MenuPage from "@/pages/menu-page";
 import CheckoutPage from "@/pages/checkout-page";
 import OrdersPage from "@/pages/orders-page";
-import AboutPage from "@/pages/about-page";
-import ContactPage from "@/pages/contact-page";
+
 import ProfilePage from "@/pages/profile-page";
 import AdminDashboard from "@/pages/admin/dashboard";
 import AdminFoodItems from "@/pages/admin/food-items";
@@ -29,8 +28,6 @@ function Router() {
       <Route path="/" component={() => <PageLayout><HomePage /></PageLayout>} />
       <Route path="/auth" component={AuthPage} />
       <Route path="/menu" component={() => <PageLayout><MenuPage /></PageLayout>} />
-      <Route path="/about" component={() => <PageLayout><AboutPage /></PageLayout>} />
-      <Route path="/contact" component={() => <PageLayout><ContactPage /></PageLayout>} />
       
       {/* Protected Routes */}
       <ProtectedRoute path="/checkout" component={() => <PageLayout><CheckoutPage /></PageLayout>} />

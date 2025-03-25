@@ -47,22 +47,22 @@ const CartSidebar = () => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-lg z-50"
+            className="fixed top-0 right-0 h-full w-full md:w-96 bg-kalpana-black text-white shadow-lg z-50"
           >
             <div className="h-full flex flex-col">
-              <div className="p-6 border-b border-gray-200 flex justify-between items-center">
-                <h2 className="font-bold text-xl">Your Cart</h2>
-                <Button variant="ghost" size="icon" onClick={closeCart} className="hover:bg-gray-100">
+              <div className="p-6 border-b border-gray-800 flex justify-between items-center">
+                <h2 className="font-bold text-xl text-kalpana-yellow">Your Cart</h2>
+                <Button variant="ghost" size="icon" onClick={closeCart} className="text-white hover:bg-gray-800">
                   <X className="h-5 w-5" />
                 </Button>
               </div>
               
               {cartState.items.length === 0 ? (
                 <div className="flex-grow flex flex-col items-center justify-center p-6">
-                  <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4">
+                  <div className="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mb-4">
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
-                      className="h-8 w-8 text-gray-400"
+                      className="h-8 w-8 text-kalpana-yellow"
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"
@@ -75,12 +75,12 @@ const CartSidebar = () => {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-medium mb-2">Your cart is empty</h3>
-                  <p className="text-gray-500 text-center mb-6">
+                  <h3 className="text-lg font-medium text-white mb-2">Your cart is empty</h3>
+                  <p className="text-gray-400 text-center mb-6">
                     Add some delicious items from our menu and they will appear here.
                   </p>
                   <Button
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-2 bg-kalpana-yellow text-kalpana-black hover:bg-kalpana-yellow/90"
                     onClick={() => {
                       navigate('/menu');
                       closeCart();
@@ -110,24 +110,24 @@ const CartSidebar = () => {
                               className="w-16 h-16 object-cover rounded-lg"
                             />
                             <div className="flex-grow">
-                              <h4 className="font-medium">{item.name}</h4>
-                              <p className="text-gray-500 text-sm">₹{item.price} x {item.quantity}</p>
+                              <h4 className="font-medium text-white">{item.name}</h4>
+                              <p className="text-kalpana-yellow text-sm">₹{item.price} x {item.quantity}</p>
                             </div>
                             <div className="flex items-center space-x-2">
                               <Button 
                                 variant="outline" 
                                 size="icon" 
-                                className="w-6 h-6 rounded-full p-0"
+                                className="w-6 h-6 rounded-full p-0 border-gray-700 text-white hover:bg-gray-800"
                                 onClick={() => updateQuantity(item.id, item.quantity - 1)}
                                 disabled={item.quantity <= 1}
                               >
                                 <Minus className="h-3 w-3" />
                               </Button>
-                              <span className="w-6 text-center">{item.quantity}</span>
+                              <span className="w-6 text-center text-white">{item.quantity}</span>
                               <Button 
                                 variant="outline" 
                                 size="icon" 
-                                className="w-6 h-6 rounded-full p-0"
+                                className="w-6 h-6 rounded-full p-0 border-gray-700 text-white hover:bg-gray-800"
                                 onClick={() => updateQuantity(item.id, item.quantity + 1)}
                               >
                                 <Plus className="h-3 w-3" />
@@ -136,7 +136,7 @@ const CartSidebar = () => {
                             <Button 
                               variant="ghost" 
                               size="icon" 
-                              className="text-gray-400 hover:text-red-500"
+                              className="text-gray-400 hover:text-kalpana-yellow"
                               onClick={() => removeItem(item.id)}
                             >
                               <Trash2 className="h-4 w-4" />
@@ -147,29 +147,29 @@ const CartSidebar = () => {
                     </div>
                   </ScrollArea>
                   
-                  <div className="p-6 border-t border-gray-200">
+                  <div className="p-6 border-t border-gray-800">
                     <div className="space-y-3 mb-6">
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Subtotal</span>
-                        <span className="font-medium">₹{cartState.totalAmount}</span>
+                        <span className="text-gray-400">Subtotal</span>
+                        <span className="font-medium text-white">₹{cartState.totalAmount}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Delivery Fee</span>
-                        <span className="font-medium">₹{deliveryFee}</span>
+                        <span className="text-gray-400">Delivery Fee</span>
+                        <span className="font-medium text-white">₹{deliveryFee}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Tax</span>
-                        <span className="font-medium">₹{tax}</span>
+                        <span className="text-gray-400">Tax</span>
+                        <span className="font-medium text-white">₹{tax}</span>
                       </div>
-                      <Separator className="my-2" />
+                      <Separator className="my-2 bg-gray-800" />
                       <div className="flex justify-between font-bold text-lg">
-                        <span>Total</span>
-                        <span>₹{totalPayable}</span>
+                        <span className="text-white">Total</span>
+                        <span className="text-kalpana-yellow">₹{totalPayable}</span>
                       </div>
                     </div>
                     
                     <Button 
-                      className="w-full flex items-center justify-center"
+                      className="w-full flex items-center justify-center bg-kalpana-yellow text-kalpana-black hover:bg-kalpana-yellow/90"
                       onClick={handleCheckout}
                     >
                       <span>Proceed to Checkout</span>
