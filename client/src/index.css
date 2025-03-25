@@ -10,4 +10,48 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+
+  /* Custom Kalpana Restaurant Theme */
+  :root {
+    --kalpana-yellow: #FFD700;
+    --kalpana-black: #121212;
+  }
+}
+
+@layer components {
+  .bg-kalpana-black {
+    background-color: var(--kalpana-black);
+  }
+  
+  .bg-kalpana-yellow {
+    background-color: var(--kalpana-yellow);
+  }
+  
+  .text-kalpana-yellow {
+    color: var(--kalpana-yellow);
+  }
+  
+  .text-kalpana-black {
+    color: var(--kalpana-black);
+  }
+
+  .border-kalpana-yellow {
+    border-color: var(--kalpana-yellow);
+  }
+
+  .border-kalpana-black {
+    border-color: var(--kalpana-black);
+  }
+  
+  .restaurant-logo {
+    height: 40px;
+    width: auto;
+  }
+
+  .restaurant-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--kalpana-yellow);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
+  }
 }
