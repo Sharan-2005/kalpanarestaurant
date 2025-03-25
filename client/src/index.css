@@ -54,4 +54,22 @@
     color: var(--kalpana-yellow);
     text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
   }
+  
+  /* Grid pattern for background texture */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, var(--kalpana-yellow) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--kalpana-yellow) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  /* Food category animations */
+  .cuisine-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .cuisine-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(var(--kalpana-yellow), 0.3);
+  }
 }

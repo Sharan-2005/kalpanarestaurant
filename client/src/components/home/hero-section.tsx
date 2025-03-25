@@ -1,47 +1,75 @@
 import { Link } from 'wouter';
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight, Calendar, Leaf, Utensils } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-gray-900 overflow-hidden">
-      <div className="absolute inset-0 z-0">
+    <section className="relative bg-kalpana-black overflow-hidden">
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-kalpana-black to-black">
+        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <img 
-          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" 
+          src="https://images.unsplash.com/photo-1542367592-8849eb9d2by2?q=80&w=2071&auto=format&fit=crop" 
           alt="Restaurant interior" 
-          className="w-full h-full object-cover opacity-50"
+          className="w-full h-full object-cover mix-blend-overlay opacity-60"
         />
       </div>
       
-      <div className="container mx-auto px-4 py-20 md:py-32 relative z-10 text-white">
+      <div className="container mx-auto px-4 py-24 md:py-36 relative z-10 text-white">
         <motion.div 
-          className="max-w-xl"
+          className="max-w-3xl mx-auto text-center md:text-left md:mx-0"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
+          <div className="flex items-center justify-center md:justify-start mb-6">
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-kalpana-yellow p-3 rounded-full mr-3"
+            >
+              <Leaf className="h-6 w-6 text-kalpana-black" />
+            </motion.div>
+            <motion.span 
+              className="text-kalpana-yellow font-semibold tracking-wider uppercase"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              Pure Vegetarian Restaurant
+            </motion.span>
+          </div>
+          
           <motion.h1 
-            className="text-4xl md:text-5xl font-bold mb-6"
+            className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Authentic Vegetarian Cuisine
+            <span className="text-kalpana-yellow">KALPANA</span> <br className="md:hidden" />
+            <span className="text-white">RESTAURANT</span>
           </motion.h1>
           
-          <motion.p 
-            className="text-lg mb-8"
+          <motion.div 
+            className="text-2xl font-light mb-8 flex flex-col items-center md:items-start"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Experience the rich flavors of South Indian, Punjabi and Chinese vegetarian 
-            delicacies at Kalpana Restaurant.
-          </motion.p>
+            <div className="flex items-center justify-center md:justify-start space-x-4 mb-4">
+              <div className="h-px w-12 bg-kalpana-yellow"></div>
+              <span className="text-kalpana-yellow uppercase tracking-widest text-sm font-semibold">Authentic Cuisine</span>
+              <div className="h-px w-12 bg-kalpana-yellow"></div>
+            </div>
+            <p className="text-lg md:text-xl text-gray-300 max-w-2xl">
+              Savor the authentic flavors of South Indian, Punjabi and Chinese vegetarian 
+              delicacies prepared with passion and tradition at Kalpana Restaurant.
+            </p>
+          </motion.div>
           
           <motion.div 
-            className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+            className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -49,9 +77,10 @@ const HeroSection = () => {
             <Button 
               asChild
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-white font-medium rounded-full"
+              className="bg-kalpana-yellow hover:bg-kalpana-yellow/90 text-kalpana-black font-bold rounded-full"
             >
               <Link href="/menu" className="flex items-center">
+                <Utensils className="mr-2 h-5 w-5" />
                 <span>Explore Menu</span>
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -61,7 +90,7 @@ const HeroSection = () => {
               asChild
               variant="outline" 
               size="lg"
-              className="bg-white hover:bg-white/90 text-gray-900 font-medium rounded-full"
+              className="border-kalpana-yellow text-kalpana-yellow hover:bg-kalpana-yellow/10 font-medium rounded-full"
             >
               <Link href="/reservation" className="flex items-center">
                 <Calendar className="mr-2 h-4 w-4" />
@@ -69,8 +98,30 @@ const HeroSection = () => {
               </Link>
             </Button>
           </motion.div>
+          
+          <motion.div
+            className="mt-12 grid grid-cols-3 gap-2 sm:gap-4 max-w-lg mx-auto md:mx-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <div className="bg-black/50 backdrop-blur p-3 sm:p-4 rounded-lg border border-kalpana-yellow/20 text-center">
+              <h3 className="text-kalpana-yellow font-bold text-sm sm:text-base mb-1">South Indian</h3>
+              <p className="text-xs sm:text-sm text-gray-300">Crispy Dosas & Flavorful Sambhar</p>
+            </div>
+            <div className="bg-black/50 backdrop-blur p-3 sm:p-4 rounded-lg border border-kalpana-yellow/20 text-center">
+              <h3 className="text-kalpana-yellow font-bold text-sm sm:text-base mb-1">Punjabi</h3>
+              <p className="text-xs sm:text-sm text-gray-300">Rich Curries & Fresh Bread</p>
+            </div>
+            <div className="bg-black/50 backdrop-blur p-3 sm:p-4 rounded-lg border border-kalpana-yellow/20 text-center">
+              <h3 className="text-kalpana-yellow font-bold text-sm sm:text-base mb-1">Chinese</h3>
+              <p className="text-xs sm:text-sm text-gray-300">Spicy Noodles & Manchurian</p>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
+      
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-kalpana-black to-transparent"></div>
     </section>
   );
 };
