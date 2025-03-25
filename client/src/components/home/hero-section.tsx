@@ -42,13 +42,13 @@ const HeroSection = () => {
           </div>
           
           <motion.h1 
-            className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
+            className="text-4xl md:text-6xl font-bold mb-6 leading-tight relative"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <span className="text-kalpana-yellow">KALPANA</span> <br className="md:hidden" />
-            <span className="text-white">RESTAURANT</span>
+            <span className="text-kalpana-yellow text-fade-in text-shimmer inline-block">KALPANA</span> <br className="md:hidden" />
+            <span className="text-white text-fade-in inline-block" style={{ animationDelay: '0.4s' }}>RESTAURANT</span>
           </motion.h1>
           
           <motion.div 

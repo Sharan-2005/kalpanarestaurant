@@ -40,7 +40,9 @@ const HomePage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Dishes</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-highlight">Featured Dishes</span>
+            </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Our chef's special selection of signature dishes that you must try.
             </p>
@@ -57,13 +59,13 @@ const HomePage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                <div className="relative">
+                <div className="relative overflow-hidden">
                   <img 
                     src={item.imageUrl} 
                     alt={item.name} 
-                    className="w-full h-48 object-cover"
+                    className="w-full h-48 object-cover transform transition-transform duration-700 hover:scale-110"
                   />
-                  <div className="absolute top-2 right-2 bg-primary text-white px-2 py-1 rounded-full flex items-center">
+                  <div className="absolute top-2 right-2 bg-kalpana-yellow text-kalpana-black px-2 py-1 rounded-full flex items-center rotating-shine">
                     <Star className="h-4 w-4 mr-1 fill-current" />
                     <span className="text-sm font-bold">Featured</span>
                   </div>
@@ -162,7 +164,7 @@ const HomePage = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="flex items-start mb-6">
-                  <div className="h-14 w-14 rounded-full bg-kalpana-yellow text-kalpana-black flex items-center justify-center mr-4 flex-shrink-0">
+                  <div className="h-14 w-14 rounded-full bg-kalpana-yellow text-kalpana-black flex items-center justify-center mr-4 flex-shrink-0 float-animation">
                     <span className="font-bold text-xl">{testimonial.avatar}</span>
                   </div>
                   <div>

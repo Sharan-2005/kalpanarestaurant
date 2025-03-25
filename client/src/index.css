@@ -209,4 +209,80 @@
       transform: translateX(-100%);
     }
   }
+  
+  /* Text highlight effect */
+  .text-highlight {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .text-highlight::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 30%;
+    width: 100%;
+    background-color: var(--kalpana-yellow);
+    opacity: 0.3;
+    z-index: -1;
+    transform: skew(-12deg) rotate(-2deg);
+  }
+  
+  /* Floating animation */
+  .float-animation {
+    animation: floating 4s ease-in-out infinite;
+  }
+  
+  @keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Parallax scroll effect */
+  .parallax-scroll {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Rotating-shine effect for badges/icons */
+  .rotating-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .rotating-shine::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      transparent, 
+      rgba(255, 215, 0, 0.1), 
+      transparent
+    );
+    animation: rotate-shine 4s linear infinite;
+  }
+  
+  @keyframes rotate-shine {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
