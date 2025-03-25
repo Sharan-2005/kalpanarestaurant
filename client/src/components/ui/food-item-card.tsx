@@ -33,17 +33,19 @@ const FoodItemCard: React.FC<FoodItemCardProps> = ({ food }) => {
   
   return (
     <motion.div 
-      className="rounded-xl overflow-hidden transition-all duration-300"
-      whileHover={{ y: -8, scale: 1.02 }}
-      transition={{ duration: 0.3 }}
+      className="food-item-card rounded-xl overflow-hidden"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
     >
       <div className="bg-black/50 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden h-full flex flex-col">
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10"></div>
           <img 
             src={food.imageUrl} 
             alt={food.name} 
-            className="w-full h-48 object-cover"
+            className="w-full h-48 object-cover transition-transform duration-500"
           />
           <div className="absolute top-3 left-3 z-20">
             <Badge variant="outline" className={`${categoryInfo[food.category].color} border px-3 py-1 flex items-center`}>
@@ -52,10 +54,10 @@ const FoodItemCard: React.FC<FoodItemCardProps> = ({ food }) => {
             </Badge>
           </div>
           <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
-            <h3 className="font-bold text-xl text-white">{food.name}</h3>
+            <h3 className="font-bold text-xl text-white text-shimmer">{food.name}</h3>
           </div>
         </div>
-        <div className="p-4 flex-grow flex flex-col">
+        <div className="p-4 flex-grow flex flex-col food-item-slide">
           <div className="flex justify-between items-start mb-3">
             <div className="flex items-center space-x-2">
               <div className="flex items-center text-gray-400 text-sm">
@@ -73,7 +75,7 @@ const FoodItemCard: React.FC<FoodItemCardProps> = ({ food }) => {
           </div>
           <p className="text-gray-300 text-sm mb-4 flex-grow">{food.description}</p>
           <Button 
-            className="w-full flex items-center justify-center gap-2 mt-2 bg-kalpana-yellow text-kalpana-black hover:bg-kalpana-yellow/90"
+            className="btn-hover-lift w-full flex items-center justify-center gap-2 mt-2 bg-kalpana-yellow text-kalpana-black hover:bg-kalpana-yellow/90"
             onClick={() => addItem(food)}
           >
             <ShoppingCart className="h-4 w-4" />

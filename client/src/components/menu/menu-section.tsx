@@ -72,20 +72,26 @@ const MenuSection: React.FC<MenuSectionProps> = ({ category }) => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {categories.map(cat => (
-              <Button
+            {categories.map((cat, index) => (
+              <motion.div
                 key={cat.id}
-                variant={activeCategory === cat.id ? 'default' : 'outline'}
-                className={`px-6 py-2 rounded-full flex items-center ${
-                  activeCategory === cat.id 
-                    ? 'bg-kalpana-yellow text-kalpana-black font-semibold' 
-                    : 'bg-transparent border-kalpana-yellow/50 text-kalpana-yellow hover:bg-kalpana-yellow/10'
-                }`}
-                onClick={() => setActiveCategory(cat.id)}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 * index }}
               >
-                {cat.icon}
-                {cat.label}
-              </Button>
+                <Button
+                  variant={activeCategory === cat.id ? 'default' : 'outline'}
+                  className={`btn-hover-lift px-6 py-2 rounded-full flex items-center ${
+                    activeCategory === cat.id 
+                      ? 'bg-kalpana-yellow text-kalpana-black font-semibold' 
+                      : 'bg-transparent border-kalpana-yellow/50 text-kalpana-yellow hover:bg-kalpana-yellow/10'
+                  }`}
+                  onClick={() => setActiveCategory(cat.id)}
+                >
+                  {cat.icon}
+                  {cat.label}
+                </Button>
+              </motion.div>
             ))}
           </div>
         </motion.div>
