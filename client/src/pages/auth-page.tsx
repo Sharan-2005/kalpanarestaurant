@@ -232,13 +232,14 @@ const AuthPage = () => {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Email</FormLabel>
+                            <FormLabel className="text-white">Email</FormLabel>
                             <FormControl>
                               <Input 
                                 type="email" 
                                 placeholder="your@email.com" 
                                 {...field} 
                                 disabled={registerMutation.isPending}
+                                className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500"
                               />
                             </FormControl>
                             <FormMessage />
