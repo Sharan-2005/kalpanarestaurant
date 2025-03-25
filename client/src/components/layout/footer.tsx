@@ -5,27 +5,13 @@ import {
 } from 'lucide-react';
 
 const Footer = () => {
-  // Restaurant locations with Google Maps links
+  // Restaurant location with Google Maps link
   const locations = [
     {
-      name: "Kalpana Restaurant - Jayanagar",
-      address: "394, 9th Main Rd, near Ragigudda Temple, Jayanagar 3rd Block",
-      city: "Bengaluru, Karnataka 560011",
-      phone: "+91 98765 43210",
-      mapsUrl: "https://maps.app.goo.gl/EENqvjw4ReTcGTqo8"
-    },
-    {
-      name: "Kalpana Restaurant - Koramangala",
-      address: "122, 80 Feet Road, 6th Block",
-      city: "Koramangala, Bengaluru, Karnataka 560095",
-      phone: "+91 87654 32109",
-      mapsUrl: "https://maps.app.goo.gl/EENqvjw4ReTcGTqo8"
-    },
-    {
-      name: "Kalpana Restaurant - Indiranagar",
-      address: "No. 12, 100 Feet Road",
-      city: "Indiranagar, Bengaluru, Karnataka 560038",
-      phone: "+91 76543 21098",
+      name: "Kalpana Restaurant",
+      address: "Municipal Council, Kalyan - Badlapur Rd, opposite ambernath",
+      city: "Ambernath East, Vandrapada, Ambernath, Maharashtra 421501",
+      phone: "+91 09922717417",
       mapsUrl: "https://maps.app.goo.gl/EENqvjw4ReTcGTqo8"
     }
   ];
@@ -147,26 +133,50 @@ const Footer = () => {
               </li>
               <li className="border-b border-gray-800 pb-2">
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Monday - Friday</span>
-                  <span className="text-white">11:00 - 22:00</span>
+                  <span className="text-gray-400">Monday</span>
+                  <span className="text-white">8:00 - 23:00</span>
+                </div>
+              </li>
+              <li className="border-b border-gray-800 pb-2">
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Tuesday</span>
+                  <span className="text-white">8:00 - 23:00</span>
+                </div>
+              </li>
+              <li className="border-b border-gray-800 pb-2">
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Wednesday</span>
+                  <span className="text-white">8:00 - 23:00</span>
+                </div>
+              </li>
+              <li className="border-b border-gray-800 pb-2">
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Thursday</span>
+                  <span className="text-white">8:00 - 23:00</span>
+                </div>
+              </li>
+              <li className="border-b border-gray-800 pb-2">
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Friday</span>
+                  <span className="text-white">8:00 - 23:00</span>
                 </div>
               </li>
               <li className="border-b border-gray-800 pb-2">
                 <div className="flex justify-between">
                   <span className="text-gray-400">Saturday</span>
-                  <span className="text-white">10:00 - 23:00</span>
-                </div>
-              </li>
-              <li className="border-b border-gray-800 pb-2">
-                <div className="flex justify-between">
-                  <span className="text-gray-400">Sunday</span>
-                  <span className="text-white">10:00 - 22:00</span>
+                  <span className="text-white">8:00 - 23:00</span>
                 </div>
               </li>
             </ul>
             
             <div className="mt-6">
               <h5 className="font-medium text-gray-300 mb-2">Contact Us</h5>
+              <div className="flex items-center mb-2">
+                <Phone className="h-5 w-5 mr-2 text-kalpana-yellow" />
+                <a href="tel:+919922717417" className="text-gray-400 hover:text-kalpana-yellow">
+                  +91 9922717417
+                </a>
+              </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 text-kalpana-yellow" />
                 <a href="mailto:info@kalpanarestaurant.com" className="text-gray-400 hover:text-kalpana-yellow">

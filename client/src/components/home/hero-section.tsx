@@ -1,6 +1,6 @@
 import { Link } from 'wouter';
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, Leaf, Utensils } from 'lucide-react';
+import { ArrowRight, ExternalLink, Leaf, Utensils, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
@@ -9,8 +9,8 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0 bg-gradient-to-r from-kalpana-black to-black">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <img 
-          src="https://images.unsplash.com/photo-1542367592-8849eb9d2by2?q=80&w=2071&auto=format&fit=crop" 
-          alt="Restaurant interior" 
+          src="/images/restaurant-interior1.jpg" 
+          alt="Kalpana Restaurant interior" 
           className="w-full h-full object-cover mix-blend-overlay opacity-60"
         />
       </div>
@@ -92,10 +92,15 @@ const HeroSection = () => {
               size="lg"
               className="border-kalpana-yellow text-kalpana-yellow hover:bg-kalpana-yellow/10 font-medium rounded-full"
             >
-              <Link href="/reservation" className="flex items-center">
-                <Calendar className="mr-2 h-4 w-4" />
-                <span>Book a Table</span>
-              </Link>
+              <a 
+                href="https://www.swiggy.com/city/mumbai/kalpana-restaurant-badlapur-road-kalpana-restaurant-rest804147?is_retargeting=true&media_source=GooglePlaceOrder" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center"
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                <span>Order on Swiggy</span>
+              </a>
             </Button>
           </motion.div>
           
