@@ -1,5 +1,6 @@
 import HeroSection from '@/components/home/hero-section';
 import FoodCategories from '@/components/home/food-categories';
+import FoodGallery from '@/components/home/food-gallery';
 import MenuSection from '@/components/menu/menu-section';
 import { motion } from 'framer-motion';
 import { useQuery } from '@tanstack/react-query';
@@ -31,7 +32,7 @@ const HomePage = () => {
       <FoodCategories />
       
       {/* Featured Items */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gradient-to-b from-kalpana-black to-gray-900">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center mb-12"
@@ -40,10 +41,15 @@ const HomePage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <div className="flex items-center justify-center mb-4">
+              <div className="h-px w-12 bg-kalpana-yellow"></div>
+              <h5 className="mx-4 text-kalpana-yellow font-semibold tracking-widest uppercase text-sm">Chef's Selections</h5>
+              <div className="h-px w-12 bg-kalpana-yellow"></div>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               <span className="text-highlight">Featured Dishes</span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-300 max-w-2xl mx-auto">
               Our chef's special selection of signature dishes that you must try.
             </p>
           </motion.div>
@@ -52,7 +58,7 @@ const HomePage = () => {
             {featuredItems.map((item, index) => (
               <motion.div 
                 key={item.id}
-                className="bg-white rounded-xl overflow-hidden shadow-md"
+                className="bg-black/20 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-gray-800 hover:border-kalpana-yellow/30"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -71,11 +77,11 @@ const HomePage = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-bold text-xl mb-2">{item.name}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{item.description}</p>
+                  <h3 className="font-bold text-xl mb-2 text-white">{item.name}</h3>
+                  <p className="text-gray-400 text-sm mb-4">{item.description}</p>
                   <div className="flex justify-between items-center">
-                    <span className="font-bold text-gray-900">₹{item.price}</span>
-                    <span className="text-sm text-gray-500 capitalize">{item.category.replace('-', ' ')}</span>
+                    <span className="font-bold text-kalpana-yellow">₹{item.price}</span>
+                    <span className="text-sm text-gray-400 capitalize">{item.category.replace('-', ' ')}</span>
                   </div>
                 </div>
               </motion.div>
@@ -83,7 +89,10 @@ const HomePage = () => {
           </div>
           
           <div className="text-center mt-10">
-            <Button asChild>
+            <Button 
+              asChild
+              className="bg-kalpana-yellow text-kalpana-black hover:bg-kalpana-yellow/90 btn-hover-lift"
+            >
               <Link href="/menu" className="flex items-center gap-2">
                 View Full Menu
                 <ArrowRight className="h-4 w-4" />
@@ -92,6 +101,9 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      
+      {/* Food Gallery */}
+      <FoodGallery />
       
       {/* Testimonials */}
       <section className="py-16 bg-kalpana-black relative">
