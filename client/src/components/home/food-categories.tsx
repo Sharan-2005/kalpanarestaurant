@@ -6,7 +6,7 @@ const cuisineCategories = [
   {
     title: 'South Indian',
     description: 'Crispy dosas, fluffy idlis, and flavorful sambars prepared in authentic South Indian style.',
-    image: 'https://images.unsplash.com/photo-1610192244261-3f33de3f24a1',
+    image: 'https://media.istockphoto.com/id/1306083166/photo/masala-sin.webp?a=1&b=1&s=612x612&w=0&k=20&c=Qh2VmSGhreqrkQVYk-6G02oaeNmRXYPYOdnAivHLLCM=',
     link: '/menu?category=south-indian',
     icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10"><circle cx="12" cy="12" r="10" /><path d="M8 14s1.5 2 4 2 4-2 4-2" /><line x1="9" y1="9" x2="9.01" y2="9" /><line x1="15" y1="9" x2="15.01" y2="9" /></svg>,
     specialties: ['Masala Dosa', 'Idli Sambhar', 'Vada'],
