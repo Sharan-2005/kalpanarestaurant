@@ -92,8 +92,9 @@ const HomePage = () => {
       </section>
       
       {/* Testimonials */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-kalpana-black relative">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div 
             className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
@@ -101,8 +102,13 @@ const HomePage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <div className="flex items-center justify-center mb-4">
+              <div className="h-px w-12 bg-kalpana-yellow"></div>
+              <h5 className="mx-4 text-kalpana-yellow font-semibold tracking-widest uppercase text-sm">Testimonials</h5>
+              <div className="h-px w-12 bg-kalpana-yellow"></div>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">What Our <span className="text-kalpana-yellow">Customers</span> Say</h2>
+            <p className="text-gray-300 max-w-2xl mx-auto">
               Don't just take our word for it. Read what our happy customers have to say about our food and service.
             </p>
           </motion.div>
@@ -112,43 +118,76 @@ const HomePage = () => {
               {
                 name: "Amit Sharma",
                 comment: "The South Indian cuisine here is exceptional! The dosas are crispy and the sambhar is flavorful. This is my go-to place for authentic vegetarian food.",
-                avatar: "A"
+                avatar: "A",
+                dish: "Masala Dosa",
+                location: "Delhi"
               },
               {
                 name: "Priya Patel",
                 comment: "I'm in love with their Paneer Butter Masala. It's rich, creamy and has the perfect balance of spices. The service is prompt and the staff is friendly.",
-                avatar: "P"
+                avatar: "P",
+                dish: "Paneer Butter Masala",
+                location: "Mumbai"
               },
               {
                 name: "Rahul Verma",
                 comment: "The best Indo-Chinese food in town! Their Veg Manchurian and Hakka Noodles combo is my favorite. Great ambiance and reasonable prices too.",
-                avatar: "R"
+                avatar: "R",
+                dish: "Veg Manchurian",
+                location: "Bangalore"
               }
             ].map((testimonial, index) => (
               <motion.div 
                 key={index}
-                className="bg-gray-50 p-6 rounded-xl shadow-sm"
+                className="bg-black/30 backdrop-blur-sm p-6 rounded-xl border border-gray-800 hover:border-kalpana-yellow/30 transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
               >
-                <div className="flex items-center mb-4">
-                  <div className="h-12 w-12 rounded-full bg-primary text-white flex items-center justify-center mr-3">
-                    <span className="font-bold text-lg">{testimonial.avatar}</span>
+                <div className="flex items-start mb-6">
+                  <div className="h-14 w-14 rounded-full bg-kalpana-yellow text-kalpana-black flex items-center justify-center mr-4 flex-shrink-0">
+                    <span className="font-bold text-xl">{testimonial.avatar}</span>
                   </div>
                   <div>
-                    <h4 className="font-bold">{testimonial.name}</h4>
-                    <div className="flex text-yellow-400">
+                    <h4 className="font-bold text-white text-lg">{testimonial.name}</h4>
+                    <div className="flex text-kalpana-yellow mb-1">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="h-4 w-4 fill-current" />
                       ))}
                     </div>
+                    <div className="text-xs text-gray-400">
+                      <span className="text-kalpana-yellow font-medium">Favorite:</span> {testimonial.dish} • <span className="text-kalpana-yellow font-medium">From:</span> {testimonial.location}
+                    </div>
                   </div>
                 </div>
-                <p className="text-gray-600">"{testimonial.comment}"</p>
+                <div className="relative">
+                  <svg className="absolute text-kalpana-yellow h-8 w-8 -left-2 -top-4 opacity-30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16.032-.52.112-1.08.239-.573.134-1.054.253-1.446.36l-.857-1.743c1.014-.345 1.82-.6 2.424-.765.604-.166 1.147-.254 1.628-.254 1.104 0 2.038.232 2.803.697.765.463 1.342 1.12 1.732 1.97.39.852.584 1.86.584 3.023 0 .97-.17 1.894-.507 2.77-.337.88-.823 1.608-1.457 2.188-.635.58-1.375.87-2.22.87-.97 0-1.81-.25-2.524-.754-.714-.502-1.259-1.176-1.637-2.018-.379-.843-.568-1.792-.568-2.848 0-1.378.32-2.596.957-3.654.638-1.058 1.594-1.842 2.868-2.353L9.47 13.43c-.147.025-.3.05-.455.076-.155.025-.278.05-.37.07zm5.632 0c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16.032-.52.112-1.08.239-.573.134-1.054.253-1.446.36l-.857-1.743c1.014-.345 1.82-.6 2.424-.765.604-.166 1.147-.254 1.628-.254 1.104 0 2.038.232 2.803.697.765.463 1.342 1.12 1.732 1.97.39.852.584 1.86.584 3.023 0 .97-.17 1.894-.507 2.77-.337.88-.823 1.608-1.457 2.188-.635.58-1.375.87-2.22.87-.97 0-1.81-.25-2.524-.754-.714-.502-1.259-1.176-1.637-2.018-.379-.843-.568-1.792-.568-2.848 0-1.378.32-2.596.957-3.654.638-1.058 1.594-1.842 2.868-2.353l1.45 1.362c-.147.025-.3.05-.455.076-.155.025-.278.05-.37.07z" />
+                  </svg>
+                  <p className="text-gray-300 relative pl-4">{testimonial.comment}</p>
+                </div>
               </motion.div>
             ))}
+          </div>
+          
+          <div className="mt-12 text-center">
+            <motion.div
+              className="inline-block"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <Link 
+                href="/about#reviews" 
+                className="text-kalpana-yellow border border-kalpana-yellow hover:bg-kalpana-yellow/10 px-6 py-3 rounded-full inline-flex items-center font-medium transition-colors"
+              >
+                <span>View All Reviews</span>
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
