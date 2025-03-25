@@ -171,7 +171,7 @@ export class MemStorage implements IStorage {
         "Crispy rice crepe stuffed with spiced potato filling, served with sambar and chutney.",
       price: 120,
       imageUrl:
-        "https://media.istockphoto.com/id/942682776/photo/masala-dosa-indian-breakfast-crepes-with-spicy-potato-filling.webp?a=1&b=1&s=612x612&w=0&k=20&c=LM5nGfClVFYZDlyqqvUCahI6CJ1vN4DuggMIsbcYlBo=",
+        "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       category: "south-indian",
       isAvailable: true,
       isVegetarian: true,
