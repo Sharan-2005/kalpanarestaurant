@@ -274,8 +274,9 @@ const AuthPage = () => {
                               <FormLabel>Phone Number</FormLabel>
                               <FormControl>
                                 <Input 
-                                  placeholder="+91 9876543210" 
+                                  placeholder="+91 90000 00000" 
                                   {...field} 
+                                  value={field.value ?? ""} 
                                   disabled={registerMutation.isPending}
                                 />
                               </FormControl>
@@ -295,6 +296,7 @@ const AuthPage = () => {
                               <Input 
                                 placeholder="Your delivery address" 
                                 {...field} 
+                                value={field.value ?? ""} 
                                 disabled={registerMutation.isPending}
                               />
                             </FormControl>
