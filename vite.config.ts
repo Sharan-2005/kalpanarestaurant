@@ -30,7 +30,8 @@ export default defineConfig({
   },
   root: path.resolve(__dirname, "client"),
   build: {
-    outDir: path.resolve(__dirname, "public"),
+    outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
   },
+   publicDir: path.resolve(__dirname, "attached_assets"),
 });
