@@ -41,14 +41,14 @@ export interface IStorage {
   updateOrderStatus(id: number, status: string): Promise<Order | undefined>;
 
   // Session store
-  sessionStore: session.SessionStore;
+  sessionStore: session.Store;
 }
 
 export class MemStorage implements IStorage {
   private users: Map<number, User>;
   private foodItems: Map<number, FoodItem>;
   private orders: Map<number, Order>;
-  sessionStore: session.SessionStore;
+  sessionStore: session.Store;
   currentUserId: number;
   currentFoodItemId: number;
   currentOrderId: number;
@@ -81,7 +81,13 @@ export class MemStorage implements IStorage {
 
   async createUser(insertUser: InsertUser): Promise<User> {
     const id = this.currentUserId++;
-    const user: User = { ...insertUser, id };
+    const user: User = { 
+      ...insertUser, 
+      id, 
+      phone: insertUser.phone ?? null, 
+      address: insertUser.address ?? null, 
+      isAdmin: insertUser.isAdmin ?? false 
+    };
     this.users.set(id, user);
     return user;
   }
@@ -103,7 +109,12 @@ export class MemStorage implements IStorage {
 
   async createFoodItem(insertFoodItem: InsertFoodItem): Promise<FoodItem> {
     const id = this.currentFoodItemId++;
-    const foodItem: FoodItem = { ...insertFoodItem, id };
+    const foodItem: FoodItem = { 
+      ...insertFoodItem, 
+      id, 
+      isAvailable: insertFoodItem.isAvailable ?? true, 
+      isVegetarian: insertFoodItem.isVegetarian ?? true 
+    };
     this.foodItems.set(id, foodItem);
     return foodItem;
   }
