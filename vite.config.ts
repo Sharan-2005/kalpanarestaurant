@@ -30,7 +30,7 @@ export default defineConfig({
   },
   root: path.resolve(__dirname, "client"),
   build: {
-    outDir: 'public',  // Changed to 'public' for Vercel deployment
+    outDir: path.resolve(__dirname, "public"),
     emptyOutDir: true,
   },
 });
