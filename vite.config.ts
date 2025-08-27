@@ -30,8 +30,21 @@ export default defineConfig({
   },
   root: path.resolve(__dirname, "client"),
   build: {
-    outDir: path.resolve(__dirname, "dist"),
+    outDir: path.resolve(__dirname, "public"),
     emptyOutDir: true,
+    copyPublicDir: true,
+    assetsDir: "attached_assets",
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          const name = assetInfo.name || '';
+          if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(name)) {
+            return `assets/[name][extname]`;
+          }
+          return `assets/[name][extname]`;
+        },
+      },
+    },
   },
-   publicDir: path.resolve(__dirname, "attached_assets"),
+  publicDir: path.resolve(__dirname, "client", "attached_assets"),
 });

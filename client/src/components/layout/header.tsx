@@ -42,12 +42,16 @@ const Header = () => {
     <header className="bg-kalpana-black shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center">
-          <Link href="/" className="flex items-center">
-            <img src="/images/kalpana-server-logo.svg" alt="Kalpana Restaurant Logo" className="h-12 w-12 mr-3" />
-            <h1 className="restaurant-name text-2xl">
+            <Link href="/" className="flex items-center">
+            <img 
+              src="/logo.svg" 
+              alt="Kalpana Restaurant Logo. A circular logo with a fork and spoon crossed in the center, surrounded by a golden border" 
+              className="h-12 w-12 mr-3" 
+            />
+            <h1 className="restaurant-name text-2xl text-kalpana-yellow font-bold">
               KALPANA <span className="text-white font-normal">RESTAURANT</span>
             </h1>
-          </Link>
+            </Link>
         </div>
         
         {/* Desktop Navigation */}

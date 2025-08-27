@@ -9,7 +9,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0 bg-gradient-to-r from-kalpana-black to-black">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <img 
-          src="/images/restaurant-interior1.jpg" 
+          src="/Kalpana_indoor.jpg"
           alt="Kalpana Restaurant interior" 
           className="w-full h-full object-cover mix-blend-overlay opacity-60"
         />
